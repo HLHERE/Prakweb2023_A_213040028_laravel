@@ -7,7 +7,7 @@
     <img src="img/HL.jpg" alt="Moch Haykal" width="200"> -->
     <h3>{{ $name }}</h3>
     <p>{{ $email }}</p>
-    <img src="img/{{ $image }}" alt="{{ $name }}" width="200">
+    <img src="img/{{ $image }}" alt="{{ $name }}" width="200" class="img-thumbnail rounded-circle">
 
     <script src = "js/script.js" ></script>
     @endsection
