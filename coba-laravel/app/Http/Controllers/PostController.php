@@ -7,15 +7,15 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function index() {
-        return view('post' ,[
+        return view('posts' ,[
             'title'=> 'Post',
-            'posts'=> Post::all()
+            'posts'=> Post::latest()->get()
         ]);
     }
     public function show (Post $post) {
-        return view('posts', [
+        return view('post', [
             'title'=> "Single Post",
-            "posts"=> $post
+            "post"=> $post
         ]);
     }
 }
