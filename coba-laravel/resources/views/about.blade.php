@@ -10,4 +10,5 @@
     <img src="img/{{ $image }}" alt="{{ $name }}" width="200" class="img-thumbnail rounded-circle">
 
     <script src = "js/script.js" ></script>
+    
     @endsection

@@ -18,13 +18,30 @@
         <li class="nav-item">
           <a class="nav-link {{( $active === "categories") ? 'active' : ''}}" aria-current="page" href="/categories">Categories</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/categories">Dashboard</a>
+        </li>
       </ul>
       <ul class="navbar-nav ms-auto">
+      @auth
+              <div class="container">
+                
+              </div>      
+                  Welcome back, {{ auth()->user()->name }} 
+                    <form action="/logout" method="post">
+                      {{--  setiap form butuh @csrf --}}
+                        @csrf
+                      <button type="submit" class="dropdown-item">
+                        <i class="bi bi-box-arrow-right"></i> Logout</button> 
+                    </form>
+        @else
         <li class="nav-item">
             <a href="/login" class="nav-link{{( $active === "login") ? 'active' : ''}}"><i class="bi bi-emoji-sunglasses"></i>
             Login</a>
         </li>
       </ul>
+      @endauth
+      
     </div>
   </div>
 </nav>
